@@ -1,8 +1,3 @@
-# BBY Restaurant Networks
-Static one-page site for bbyrestaurants.com.
+# BBY Restaurant Networks v2
 
-## GitHub Pages
-Upload `index.html`, `styles.css`, and `script.js` to the repository root, then enable GitHub Pages from the main branch/root folder.
-
-## Contact details
-The starter uses info@bbytechnologies.com and 737-333-5763. Edit these directly in `index.html` if needed.
+Upload index.html and styles.css to the repository root, replacing the existing versions.
