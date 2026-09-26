@@ -1378,15 +1378,4 @@ h3 {
   }
 }
 
-/* BBY Restaurants brand refinement */
-.brand-name { display:flex; align-items:baseline; gap:7px; }
-.brand-by { color:#8190a1; font-size:.58rem; font-weight:600; white-space:nowrap; }
-@media(max-width:560px){ .brand-name{display:flex;} .brand-by{display:none;} }
-
-/* Restaurant brand color only — retain original BBY header proportions */
-.brand-name {
-  color: var(--blue-600);
-}
-.brand-by {
-  color: #8190a1;
-}
+.brand-by{display:none;} }
