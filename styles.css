@@ -1382,3 +1382,26 @@ h3 {
 .brand-name { display:flex; align-items:baseline; gap:7px; }
 .brand-by { color:#8190a1; font-size:.58rem; font-weight:600; white-space:nowrap; }
 @media(max-width:560px){ .brand-name{display:flex;} .brand-by{display:none;} }
+
+/* Header brand update */
+.brand { align-items: center; }
+.brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  color: var(--navy-900);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.brand-by {
+  color: #8190a1;
+  font-size: .58rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .brand-name { display: flex; font-size: 1.2rem; }
+  .brand-mark { font-size: 1.2rem; }
+  .brand-by { display: none; }
+}
