@@ -1,3 +1,3 @@
-# BBY Restaurant Networks v2
+BBY Restaurants website
 
-Upload index.html and styles.css to the repository root, replacing the existing versions.
+Upload index.html, styles.css, and script.js to the root of the GitHub Pages repository, replacing the existing files.
