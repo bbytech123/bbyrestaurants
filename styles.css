@@ -1545,3 +1545,25 @@ h3 {
     padding: 26px;
   }
 }
+
+
+/* Four What We Do service cards */
+#services .pillar-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#services .pillar-card {
+  padding: 26px;
+}
+
+@media (max-width: 1000px) {
+  #services .pillar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  #services .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+}
