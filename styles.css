@@ -1673,3 +1673,11 @@ h3 {
 #services .pillar-card {
   padding-top: 24px;
 }
+
+
+/* Final icon sizing: between original and small versions */
+#services .service-image-icon {
+  width: 52px;
+  height: 52px;
+  margin: -1px 0 50px -1px;
+}
