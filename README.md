@@ -1,4 +1,7 @@
-BBY Restaurants - restructured version
+Upload ALL FOUR website files to the repository root, replacing the existing versions:
+- index.html
+- styles.css
+- script.js
+- Restaurant_Network.png
 
-Upload index.html, styles.css, and script.js to the repository root, replacing the current versions.
-Navigation: Home / What We Do / How You Win / About / Contact.
+The How It Works section has been removed completely.

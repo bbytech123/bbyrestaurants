@@ -1446,3 +1446,27 @@ h3 {
   .win-card { min-height: 0; padding: 26px; }
   .win-number { margin-bottom: 34px; }
 }
+
+
+/* What We Do restaurant network graphic */
+.restaurant-network-graphic {
+  margin: 12px 0 48px;
+  overflow: hidden;
+  background: var(--navy-950);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 22px 60px rgba(3, 22, 47, 0.12);
+}
+
+.restaurant-network-graphic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 560px) {
+  .restaurant-network-graphic {
+    margin-bottom: 32px;
+    border-radius: 16px;
+  }
+}
