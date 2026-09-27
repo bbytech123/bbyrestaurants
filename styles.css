@@ -1681,3 +1681,21 @@ h3 {
   height: 52px;
   margin: -1px 0 50px -1px;
 }
+
+/* Centered service icons */
+#services .service-image-icon {
+  display:block;
+  width:76px;
+  height:76px;
+  margin:2px auto 42px;
+  object-fit:cover;
+  object-position:center;
+}
+#services .pillar-card { padding-top:30px; }
+@media (max-width:560px) {
+  #services .service-image-icon {
+    width:68px;
+    height:68px;
+    margin-bottom:32px;
+  }
+}
