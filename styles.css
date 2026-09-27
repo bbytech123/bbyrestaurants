@@ -1506,3 +1506,42 @@ h3 {
     padding-bottom: 78px;
   }
 }
+
+
+/* How You Win — four vertical outcome rows */
+.win-grid {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.win-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 28px;
+  align-items: center;
+  min-height: 0;
+  padding: 30px 34px;
+}
+
+.win-number {
+  margin: 0;
+  font-size: .84rem;
+}
+
+.win-copy h3 {
+  margin: 0 0 7px;
+  font-size: 1.65rem;
+}
+
+.win-copy p {
+  max-width: 900px;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .win-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 26px;
+  }
+}
