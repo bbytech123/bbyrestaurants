@@ -1,7 +1,2 @@
-Upload ALL FOUR website files to the repository root, replacing the existing versions:
-- index.html
-- styles.css
-- script.js
-- Restaurant_Network.png
-
-The How It Works section has been removed completely.
+Upload all four files to the GitHub repository root, replacing the existing versions.
+This update rounds the restaurant graphic and balances spacing around the service cards.
