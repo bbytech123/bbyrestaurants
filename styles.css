@@ -1567,3 +1567,49 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Force the four What We Do cards into one balanced desktop row */
+#services .pillar-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px;
+}
+
+#services .pillar-card {
+  min-width: 0;
+  min-height: 330px;
+  padding: 28px 26px;
+}
+
+#services .pillar-card .card-number {
+  margin-bottom: 64px;
+}
+
+#services .pillar-card h3 {
+  font-size: 1.18rem;
+}
+
+#services .pillar-card p {
+  font-size: .92rem;
+}
+
+#services .pillar-card .card-link {
+  font-size: .82rem;
+}
+
+/* Only collapse once the screen actually gets too narrow for four cards */
+@media (max-width: 900px) {
+  #services .pillar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #services .pillar-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #services .pillar-card {
+    min-height: 0;
+  }
+}
