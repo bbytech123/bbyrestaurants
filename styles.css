@@ -1613,3 +1613,23 @@ h3 {
     min-height: 0;
   }
 }
+
+/* Blue service icons replacing card numbers */
+#services .service-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 54px;
+  place-items: center;
+  color: var(--blue-600);
+}
+#services .service-icon svg {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#services .pillar-card .card-number { display:none; }
