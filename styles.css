@@ -1659,3 +1659,17 @@ h3 {
     min-height: 0;
   }
 }
+
+
+/* Refine What We Do icon size and placement */
+#services .service-image-icon {
+  width: 44px;
+  height: 44px;
+  margin: -2px 0 52px -2px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#services .pillar-card {
+  padding-top: 24px;
+}
