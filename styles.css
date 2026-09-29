@@ -1719,3 +1719,49 @@ h3 {
   .client-logo-grid{grid-template-columns:1fr}
   .client-logo-card{min-height:180px}
 }
+
+
+/* Favorite Clients — centered horizontal logo row */
+.client-logo-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.client-logo-card {
+  display: flex;
+  flex: 0 1 320px;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.client-logo-card img,
+.client-logo-card:first-child img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .client-logo-grid {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .client-logo-card {
+    flex-basis: auto;
+    width: min(320px, 90%);
+  }
+}
