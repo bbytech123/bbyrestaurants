@@ -1765,3 +1765,9 @@ h3 {
     width: min(320px, 90%);
   }
 }
+
+/* Match How You Win cards to the blue About treatment */
+.win-card {
+  background: linear-gradient(135deg, rgba(233,243,255,.96), rgba(201,224,255,.78)) !important;
+  border-color: rgba(31,114,214,.20) !important;
+}
