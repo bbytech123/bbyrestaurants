@@ -1878,3 +1878,15 @@ h3 {
 .revenue-results-panel{align-self:stretch}
 .revenue-result strong{min-width:210px}
 @media(max-width:560px){.calculator-shell{gap:16px}.revenue-result{align-items:flex-start;flex-direction:column;gap:6px}.revenue-result strong{min-width:0;text-align:left}}
+
+/* BBY estimate label in Checks Declined card */
+.calculator-control-panel:first-of-type{position:relative}
+.bby-estimate-label{
+  position:absolute;
+  right:24px;
+  bottom:16px;
+  color:var(--blue-600);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+}
