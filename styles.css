@@ -1832,7 +1832,4 @@ h3 {
 .average-check-panel{grid-column:2}
 @media(max-width:980px){.average-check-panel{grid-column:auto}}
 
-/* Tighten vertical spacing between calculator control boxes */
-.calculator-control-panel + .calculator-control-panel {
-  margin-top: 10px;
-}
+.calculator-control-panel + .calculator-control-panel { margin-top: 2px; }
