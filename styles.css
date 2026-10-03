@@ -1832,4 +1832,40 @@ h3 {
 .average-check-panel{grid-column:2}
 @media(max-width:980px){.average-check-panel{grid-column:auto}}
 
+/* Calculator spacing + revenue results */
 .calculator-control-panel + .calculator-control-panel { margin-top: 2px; }
+
+.revenue-results-panel {
+  align-self: start;
+  margin-top: 14px;
+  padding: 30px 32px;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(31,114,214,.18);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 42px rgba(3,22,47,.06);
+}
+.revenue-results-panel .calculator-control-label { margin-bottom: 20px; }
+.revenue-result {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:15px 0;
+  border-top:1px solid rgba(10,45,89,.10);
+}
+.revenue-result span {
+  color:var(--slate);
+  font-size:.92rem;
+  font-weight:600;
+}
+.revenue-result strong {
+  color:var(--navy-950);
+  font-family:"Playfair Display",serif;
+  font-size:1.55rem;
+  line-height:1.15;
+  text-align:right;
+}
+.revenue-result:last-child strong { color:#079f91; }
+@media(max-width:980px){
+  .revenue-results-panel{margin-top:0}
+}
