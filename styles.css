@@ -1826,3 +1826,8 @@ h3 {
 .calculator-slider-labels span:nth-child(2){text-align:center}.calculator-slider-labels span:last-child{text-align:right}
 .calculator-control-help{margin:28px 0 0;color:var(--slate);font-size:.9rem}
 @media(max-width:560px){.calculator-control-panel{padding:28px 22px}.calculator-control-heading{flex-direction:column}}
+
+.calculator-shell{align-items:start}
+.calculator-control-panel+.calculator-control-panel{margin-top:22px}
+.average-check-panel{grid-column:2}
+@media(max-width:980px){.average-check-panel{grid-column:auto}}
