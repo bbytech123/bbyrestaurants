@@ -1870,23 +1870,12 @@ h3 {
   .revenue-results-panel{margin-top:0}
 }
 
+/* Full-width vertical calculator flow */
 .calculator-shell{display:flex!important;flex-direction:column;gap:22px;align-items:stretch!important}
 .calculator-intro,.calculator-control-panel,.average-check-panel,.revenue-results-panel{width:100%;grid-column:auto!important;margin-top:0!important}
-.calculator-intro h2{max-width:none}
-.calculator-intro>p:not(.eyebrow){max-width:900px}
+.calculator-intro h2{max-width:none}.calculator-intro>p:not(.eyebrow){max-width:900px}
 .calculator-control-panel+.calculator-control-panel{margin-top:0!important}
 .revenue-results-panel{align-self:stretch}
-.revenue-result strong{min-width:210px}
-@media(max-width:560px){.calculator-shell{gap:16px}.revenue-result{align-items:flex-start;flex-direction:column;gap:6px}.revenue-result strong{min-width:0;text-align:left}}
-
-/* BBY estimate label in Checks Declined card */
 .calculator-control-panel:first-of-type{position:relative}
-.bby-estimate-label{
-  position:absolute;
-  right:24px;
-  bottom:16px;
-  color:var(--blue-600);
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-}
+.bby-estimate-label{position:absolute;right:24px;bottom:16px;color:var(--blue-600);font-size:.72rem;font-weight:700;letter-spacing:.08em}
+.tips-results-panel{margin-top:0!important}

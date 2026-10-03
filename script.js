@@ -28,3 +28,16 @@ if(monthlyRevenueLost&&annualRevenueLost&&revenueDeclinedSlider&&revenueAverageC
   revenueAverageCheckSlider.addEventListener("input",updateRevenueLost);
   updateRevenueLost();
 }
+
+const monthlyTipsLost=document.querySelector("#monthly-tips-lost"),annualTipsLost=document.querySelector("#annual-tips-lost");
+if(monthlyTipsLost&&annualTipsLost&&revenueDeclinedSlider&&revenueAverageCheckSlider){
+ const tipsMoney=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
+ const updateTipsLost=()=>{
+  const ranges=[[3,5],[5,7],[7,10]],r=ranges[Math.max(0,Math.min(2,Number(revenueDeclinedSlider.value)))],a=Number(revenueAverageCheckSlider.value);
+  monthlyTipsLost.textContent=`${tipsMoney(r[0]*a*.2)}–${tipsMoney(r[1]*a*.2)}`;
+  annualTipsLost.textContent=`${tipsMoney(r[0]*a*12*.2)}–${tipsMoney(r[1]*a*12*.2)}`;
+ };
+ revenueDeclinedSlider.addEventListener("input",updateTipsLost);
+ revenueAverageCheckSlider.addEventListener("input",updateTipsLost);
+ updateTipsLost();
+}
