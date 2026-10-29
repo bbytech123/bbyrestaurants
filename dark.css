@@ -144,10 +144,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #a6ce
 .angels-mark{width:225px;height:150px}
 .korrect-mark{width:280px;height:71.4px}
 .client-mark img{width:100%!important;height:100%;max-height:none!important;object-fit:contain}
-@supports (mask-image:url("assets/Angels.webp")){
-.client-mark:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#a7e5ffcc,#69baffaa 45%,#a7e5ffcc),url("assets/hero-aurora.webp") center/160% auto,#50a4ef;mask-repeat:no-repeat;mask-position:center;mask-size:contain;pointer-events:none}
-.angels-mark:after{mask-image:url("assets/Angels.webp")}
-.korrect-mark:after{mask-image:url("assets/Korrect.webp")}
+@supports (mask-image:url("assets--Angels.webp")){
+.client-mark:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#a7e5ffcc,#69baffaa 45%,#a7e5ffcc),url("assets--hero-aurora.webp") center/160% auto,#50a4ef;mask-repeat:no-repeat;mask-position:center;mask-size:contain;pointer-events:none}
+.angels-mark:after{mask-image:url("assets--Angels.webp")}
+.korrect-mark:after{mask-image:url("assets--Korrect.webp")}
 }
 /* Center the About block evenly between neighboring section boundaries. */
 #about{padding-block:72px}
