@@ -1,43 +1,62 @@
-const menuButton=document.querySelector(".menu-button");const siteNav=document.querySelector(".site-nav");menuButton?.addEventListener("click",()=>{const open=siteNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));});siteNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{siteNav.classList.remove("open");menuButton?.setAttribute("aria-expanded","false");}));const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));document.querySelectorAll("#year").forEach(e=>e.textContent=new Date().getFullYear());
-const declinedSlider=document.querySelector("#declined-slider"),declinedDisplay=document.querySelector("#declined-range-display"),declinedBadge=document.querySelector("#declined-badge");
-if(declinedSlider&&declinedDisplay&&declinedBadge){const ranges=[["3–5","3–5 checks per month"],["5–7","5–7 checks per month"],["7–10+","7–10+ checks per month"]];const update=()=>{const r=ranges[Number(declinedSlider.value)];declinedBadge.textContent=r[0];declinedDisplay.textContent=r[1]};declinedSlider.addEventListener("input",update);update();}
-
-const averageCheckSlider=document.querySelector("#average-check-slider"),averageCheckDisplay=document.querySelector("#average-check-display"),averageCheckBadge=document.querySelector("#average-check-badge");
-if(averageCheckSlider&&averageCheckDisplay&&averageCheckBadge){
- const updateAverageCheck=()=>{const v=Number(averageCheckSlider.value),d=v>=700?"$700+":`$${v}`;averageCheckBadge.textContent=d;averageCheckDisplay.textContent=`${d} average check`;};
- averageCheckSlider.addEventListener("input",updateAverageCheck);updateAverageCheck();
-}
-
-const monthlyRevenueLost=document.querySelector("#monthly-revenue-lost");
-const annualRevenueLost=document.querySelector("#annual-revenue-lost");
-const revenueDeclinedSlider=document.querySelector("#declined-slider");
-const revenueAverageCheckSlider=document.querySelector("#average-check-slider");
-
-if(monthlyRevenueLost&&annualRevenueLost&&revenueDeclinedSlider&&revenueAverageCheckSlider){
-  const checkRanges=[[3,5],[5,7],[7,10]];
-  const money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
-  const updateRevenueLost=()=>{
-    const range=checkRanges[Math.max(0,Math.min(2,Number(revenueDeclinedSlider.value)))];
-    const averageCheck=Number(revenueAverageCheckSlider.value);
-    const monthlyLow=range[0]*averageCheck;
-    const monthlyHigh=range[1]*averageCheck;
-    monthlyRevenueLost.textContent=`${money(monthlyLow)}–${money(monthlyHigh)}`;
-    annualRevenueLost.textContent=`${money(monthlyLow*12)}–${money(monthlyHigh*12)}`;
+(() => {
+  'use strict';
+  const menu = document.querySelector('.menu-button');
+  const navigation = document.querySelector('.site-nav');
+  const closeMenu = () => {
+    navigation?.classList.remove('open');
+    menu?.setAttribute('aria-expanded', 'false');
   };
-  revenueDeclinedSlider.addEventListener("input",updateRevenueLost);
-  revenueAverageCheckSlider.addEventListener("input",updateRevenueLost);
-  updateRevenueLost();
-}
+  menu?.addEventListener('click', () => {
+    if (!navigation) return;
+    const open = navigation.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navigation?.classList.contains('open')) {
+      closeMenu();
+      menu?.focus();
+    }
+  });
+  window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMenu(); });
+  document.querySelectorAll('#year').forEach(element => { element.textContent = new Date().getFullYear(); });
 
-const monthlyTipsLost=document.querySelector("#monthly-tips-lost"),annualTipsLost=document.querySelector("#annual-tips-lost");
-if(monthlyTipsLost&&annualTipsLost&&revenueDeclinedSlider&&revenueAverageCheckSlider){
- const tipsMoney=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
- const updateTipsLost=()=>{
-  const ranges=[[3,5],[5,7],[7,10]],r=ranges[Math.max(0,Math.min(2,Number(revenueDeclinedSlider.value)))],a=Number(revenueAverageCheckSlider.value);
-  monthlyTipsLost.textContent=`${tipsMoney(r[0]*a*.2)}–${tipsMoney(r[1]*a*.2)}`;
-  annualTipsLost.textContent=`${tipsMoney(r[0]*a*12*.2)}–${tipsMoney(r[1]*a*12*.2)}`;
- };
- revenueDeclinedSlider.addEventListener("input",updateTipsLost);
- revenueAverageCheckSlider.addEventListener("input",updateTipsLost);
- updateTipsLost();
-}
+  const declined = document.querySelector('#declined-slider');
+  const average = document.querySelector('#average-check-slider');
+  if (!declined || !average) return;
+  const ranges = [[3, 5], [5, 7], [7, 10]];
+  const labels = ['3–5', '5–7', '7–10+'];
+  const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const finiteBounded = (value, fallback, minimum, maximum, step) => {
+    const parsed = Number(value);
+    const number = value === '' || !Number.isFinite(parsed) ? fallback : parsed;
+    return Math.min(maximum, Math.max(minimum, minimum + Math.round((number - minimum) / step) * step));
+  };
+  const write = (id, value) => {
+    const element = document.querySelector('#' + id);
+    if (element) element.textContent = value;
+  };
+  const update = () => {
+    const index = finiteBounded(declined.value, 1, 0, 2, 1);
+    const check = finiteBounded(average.value, 100, 70, 700, 10);
+    declined.value = String(index);
+    average.value = String(check);
+    const label = labels[index];
+    const amountLabel = check === 700 ? '$700+' : money.format(check);
+    const [low, high] = ranges[index];
+    const exposure = multiplier => `${money.format(low * check * multiplier)}–${money.format(high * check * multiplier)}`;
+    write('declined-badge', label);
+    write('declined-range-display', `${label} checks per month`);
+    write('average-check-badge', amountLabel);
+    write('average-check-display', `${amountLabel} average check`);
+    write('monthly-revenue-lost', exposure(1));
+    write('annual-revenue-lost', exposure(12));
+    write('monthly-tips-lost', exposure(0.2));
+    write('annual-tips-lost', exposure(2.4));
+    declined.setAttribute('aria-valuetext', `${label} checks per month`);
+    average.setAttribute('aria-valuetext', `${amountLabel} average check`);
+  };
+  declined.addEventListener('input', update);
+  average.addEventListener('input', update);
+  update();
+})();

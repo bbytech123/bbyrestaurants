@@ -1,0 +1,189 @@
+/* BBY Restaurants sandbox: same live-site structure, cool charcoal dark mode. */
+:root {
+ color-scheme: dark;
+ --navy-950:#eff7ff; --navy-900:#e6f1ff; --navy-800:#bbd6f3;
+ --ink:#e5eff8; --slate:#b1c1d3; --line:rgba(172,195,221,.24);
+ --blue-600:#71aaff; --blue-400:#9bc8ff; --blue-300:#b9d9ff;
+ --blue-gradient:linear-gradient(135deg,#073569,#1c6bca);
+ --blue-gradient-soft:linear-gradient(135deg,#263a51,#263443);
+ --ice:#25394f; --shadow:0 24px 70px rgba(0,0,0,.25);
+}
+html{scroll-padding-top:110px}
+body{background:#202123;color:var(--ink)}
+.site-header{background:rgba(32,33,35,.96);border-color:#484b50;box-shadow:0 10px 30px #0002}
+.brand-mark,h1,h2,h3,.site-footer strong{color:#eff7ff}
+.brand-name{color:#afbdd0}
+.site-nav a:hover{color:#9dc9ff}
+.nav-contact,.button-primary{background:var(--blue-gradient);color:#f7fbff;box-shadow:0 10px 24px #0054b326}
+.nav-contact:hover,.button-primary:hover{background:linear-gradient(135deg,#114d89,#287bdb)}
+.button-secondary{background:#121416;color:#e6eff8;border-color:#32363a}
+.button-secondary:hover{background:#2b333e;border-color:#5f7d9e}
+.menu-button{color:#d9eaff}
+.hero-blob{opacity:1}
+#heroBlobGradient stop:nth-child(1){stop-color:#263e5c;stop-opacity:1}
+#heroBlobGradient stop:nth-child(2){stop-color:#385b82;stop-opacity:1}
+#heroBlobGradient stop:nth-child(3){stop-color:#1c304b;stop-opacity:1}
+#heroBlobGradient stop:nth-child(4){stop-color:#343e4e;stop-opacity:.94}
+#heroBlobGlow stop{stop-color:#5c85bd}
+.hero-blob .blob-main,.hero-blob .blob-glow{animation:none}
+.hero-text{color:#eff5fc;text-shadow:0 1px 3px #14223580}
+.eyebrow,.card-number{color:#84b7ff}
+.section-heading::after{background:linear-gradient(90deg,#3166a6,#90c7ff)}
+.pillar-card,.project-card{background:linear-gradient(155deg,#171a1e,#222a33);border-color:#454b53;box-shadow:0 14px 45px #0002}
+.pillar-card:hover,.project-card:hover{border-color:#6e9bd1;box-shadow:0 22px 52px #0003}
+#services .service-image-icon{filter:invert(1) hue-rotate(180deg) brightness(1.45);mix-blend-mode:screen}
+.restaurant-network-graphic{background:#111923;border-color:#3e5269;box-shadow:0 22px 60px #0003}
+.win-section{background:linear-gradient(180deg,#1a1d21,#20262d);border-color:#3e4651}
+.win-card{background:linear-gradient(135deg,#25374b,#26333f)!important;border-color:#445a73!important;box-shadow:0 14px 45px #0002}
+.win-card:hover{border-color:#7099c8!important;box-shadow:0 22px 52px #0003}
+.win-number{color:#8bbcff}
+/* Revenue calculator CTA: green → teal → navy, matching the supplied reference. */
+.win-card-link{background:linear-gradient(112deg,#173e32 0%,#183a3a 48%,#1b2b40 100%)!important;border-color:#195e60!important}
+.win-card-link:hover{border-color:#39a99b!important;box-shadow:0 22px 52px #001c1b33!important}
+.win-card-link .win-number,.win-card-link .win-arrow{color:#21b8aa!important}
+.win-card-link:focus-visible{outline:3px solid #70ddc5;outline-offset:5px}
+.about-card{background:linear-gradient(135deg,#293c53,#26323e);border-color:#4a6078}
+.client-logo-card{background:transparent}
+.contact-section{background:radial-gradient(circle at 50% 0%,#2d65a533,transparent 60%),#111922;border-top:1px solid #3b4e64}
+.contact-inner h2{color:#edf6ff}
+.contact-inner>p:not(.eyebrow){color:#c1cfdf}
+.button-light{background:var(--blue-gradient);color:#fff;border-color:#3e6c9d}
+.button-light:hover{background:#235f9e}
+.text-link{color:#a9d0ff}
+.site-footer{color:#a6b8cd}
+.calculator-hero:before{background:radial-gradient(circle at 42% 42%,#526f995c,#344a6466 52%,#26344333)}
+.calculator-hero-stat{background:linear-gradient(145deg,#252f3b,#1b222a);border-color:#4a6078}
+.calculator-section{background:linear-gradient(180deg,#181c21,#20262d);border-color:#414b58}
+.calculator-shell{background:linear-gradient(135deg,#273b51,#27343f);border-color:#4a627e}
+.calculator-control-panel,.revenue-results-panel,.calculator-placeholder{background:#171e27;border-color:#455c75;box-shadow:0 16px 42px #0002}
+.calculator-value-badge{background:var(--blue-gradient);color:#fff}
+.calculator-control-label,.bby-estimate-label,.tips-results-heading span{color:#96c3ff}
+.calculator-slider{background:linear-gradient(90deg,#9fcaff,#3477cd)}
+.calculator-slider::-webkit-slider-thumb{background:#f3f8ff;border-color:#3e83df;box-shadow:0 5px 16px #0004}
+.calculator-slider::-moz-range-thumb{background:#f3f8ff;border-color:#3e83df}
+.revenue-result{border-top-color:#3c4d62}
+.revenue-result strong{color:#e8f3ff}
+.revenue-result:last-child strong{color:#94c4ff}
+.calculator-explainer-grid article{background:linear-gradient(150deg,#171c22,#222d3a);border-color:#45586e}
+.active-nav-link{color:#9fcbff!important}
+/* Comfortable keyboard focus and reliable content if JS/animations are unavailable. */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #a6ceff;outline-offset:5px}
+.reveal{opacity:1;transform:none}
+@media(max-width:860px){.site-nav{background:#1a212b;border-color:#4d627c;box-shadow:0 16px 40px #0005}.site-nav a:hover{background:#293c51}.site-header{backdrop-filter:none}}
+@media(max-width:560px){html{scroll-padding-top:95px}.brand-name{display:inline}.brand-by{display:none}.hero-text{font-size:1.05rem}.revenue-result{gap:16px;flex-wrap:wrap}.revenue-result strong{overflow-wrap:anywhere;font-size:clamp(1.45rem,6vw,2.4rem)}.tips-results-heading{flex-wrap:wrap;gap:0}.bby-estimate-label{position:static;display:block;text-align:right;margin-top:15px}.calculator-control-panel{position:relative}}
+/* Monthly dollar results stay blue; annual totals are green. */
+#monthly-revenue-lost,#monthly-tips-lost{color:#94c4ff}
+#annual-revenue-lost,#annual-tips-lost{color:#67d6a2}
+
+/* Client marks share the same blue treatment while preserving original artwork. */
+.client-logo-card img{filter:brightness(0) saturate(100%) invert(51%) sepia(90%) saturate(2100%) hue-rotate(190deg) brightness(122%) contrast(101%) saturate(.82) drop-shadow(0 3px 14px #379cff30)}
+.client-logo-card .korrect-logo{width:100%;height:auto;max-height:150px}
+
+/* Static organic calculator backdrop; no animation, image download, or filter work. */
+.calculator-hero{grid-template-columns:1fr;isolation:isolate}
+.calculator-hero:before{display:none}
+.calculator-hero>.reveal{position:relative;z-index:1;max-width:850px}
+.calculator-blob{position:absolute;z-index:0;pointer-events:none;right:-16%;top:30px;width:100%;height:calc(100% - 50px)}
+@media(max-width:700px){.calculator-blob{right:-35%;top:45px;width:145%;height:calc(100% - 65px)}}
+/* Calculator's outer block matches the personal dashboard Home ice-blue panels. */
+.calculator-shell{background:radial-gradient(ellipse at 100% 0%,#88d9f12b,transparent 65%),linear-gradient(135deg,#25465a,#1d354d 62%,#172b40);border-color:#8ecde765;box-shadow:inset 0 1px #c7f1ff20,0 10px 30px #08172520}
+.calculator-intro .eyebrow{color:#b8dcff}
+.calculator-intro>p:not(.eyebrow){color:#c4ddec}
+/* Requested Home outcome cards (01–04) and About block share the same foundation. */
+.win-card:not(.win-card-link),.about-card{background:radial-gradient(ellipse at 100% 0%,#88d9f12b,transparent 65%),linear-gradient(135deg,#25465a,#1d354d 62%,#172b40)!important;border-color:#8ecde765!important;box-shadow:inset 0 1px #c7f1ff20,0 10px 30px #08172520}
+.win-card:not(.win-card-link) p,.about-card p:not(.eyebrow){color:#c4ddec}
+.win-card:not(.win-card-link) .win-number,.about-card .eyebrow{color:#b8dcff}
+
+/* PHP dashboard card palette, with a teal rim on every edge rather than one-sided. */
+.pillar-card,.calculator-explainer-grid article{background:radial-gradient(ellipse at center,#172b40 5%,#1d354d 58%,#28586a 100%);border-color:#85d7e766;box-shadow:inset 0 0 0 1px #b6ecf514,0 14px 45px #0002}
+.pillar-card p,.calculator-explainer-grid article p{color:#c4ddec}
+.calculator-explainer-grid article>span{color:#b8dcff}
+.how-tos-page{min-height:calc(100vh - 210px);padding-top:95px;padding-bottom:100px}
+.how-tos-heading{max-width:800px;margin-bottom:40px}
+.how-tos-heading h1{font-size:clamp(3.5rem,7vw,6rem)}
+.how-tos-lead{color:#c4ddec;font-size:1.15rem}
+.how-tos-empty{max-width:850px;padding:40px;border:1px solid #85d7e766;border-radius:24px;background:radial-gradient(ellipse at center,#172b40 5%,#1d354d 58%,#28586a 100%)}
+.how-tos-empty h2{font-size:clamp(1.6rem,4vw,2.3rem)}
+.how-tos-empty p{color:#c4ddec;margin-bottom:28px}
+@media(max-width:560px){.how-tos-page{padding-top:65px;padding-bottom:65px}.how-tos-empty{padding:26px}}
+
+/* Static iridescent mesh art inspired by the supplied Unifi slide; no runtime effect. */
+.hero-blob{height:720px;top:10px}
+.hero-aurora-art{display:block;width:100%;height:100%;object-fit:fill;opacity:.86}
+.hero-blob:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#202123b8 0%,#20212380 38%,#20212300 68%);pointer-events:none}
+@media(max-width:700px){.hero-aurora-art{object-fit:cover;object-position:40% center;opacity:.55}.hero-blob:after{background:linear-gradient(90deg,#20212399,#20212355 70%,transparent)}}
+/* Header surface shares the dashboard-inspired ice-blue foundation. */
+.site-header{background:radial-gradient(ellipse at 100% 0%,#88d9f12b,transparent 65%),linear-gradient(135deg,#25465a,#1d354d 62%,#172b40);border-color:#8ecde765;box-shadow:inset 0 1px #c7f1ff20,0 10px 30px #08172520;backdrop-filter:none}
+.site-header .brand-name,.site-header .site-nav>a:not(.nav-contact){color:#d3e9f8}
+@media(max-width:860px){.site-nav{background:linear-gradient(135deg,#25465a,#172b40);border-color:#8ecde765}}
+
+/* Home header/hero boundary mirrors the fine full-width revenue-page divider. */
+.hero:after{display:block;position:absolute;left:50%;right:auto;top:auto;bottom:0;width:100vw;height:1px;transform:translateX(-50%);border:0;border-radius:0;background:#414b58;box-shadow:none;z-index:0;pointer-events:none}
+.calculator-aurora{position:absolute;z-index:0;pointer-events:none;right:-16%;top:10px;width:110%;height:calc(100% - 20px)}
+.calculator-aurora img{display:block;width:100%;height:100%;object-fit:fill;opacity:.83}
+.calculator-aurora:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#202123c9 0%,#20212388 37%,#20212300 72%)}
+@media(max-width:700px){.calculator-aurora{right:-30%;width:140%}.calculator-aurora img{object-fit:cover;object-position:45% center;opacity:.48}.calculator-aurora:after{background:linear-gradient(90deg,#20212399,#20212366 65%,#20212322)}}
+/* Crisp foreground typography without dimming the approved artwork. */
+.hero-copy h1,.calculator-hero h1{color:#fff;text-shadow:0 2px 2px #07111e99,0 7px 24px #03091266}
+.hero-copy .hero-text,.calculator-lead{color:#f4f9ff;text-shadow:0 1px 2px #030912cc,0 3px 12px #03091280}
+.hero-copy .eyebrow,.calculator-hero .eyebrow{color:#b8dcff;text-shadow:0 1px 3px #030912aa}
+
+/* Compact How To header art and matching full-width section divider. */
+.how-tos-page{padding-top:40px}
+.how-tos-heading{position:relative;isolation:isolate;max-width:none;padding-block:45px 58px;margin-bottom:48px}
+.how-tos-heading h1,.how-tos-lead{position:relative;z-index:1}
+.how-tos-heading h1{color:#fff;text-shadow:0 2px 2px #07111e99,0 7px 24px #03091266}
+.how-tos-lead{color:#f4f9ff;text-shadow:0 1px 2px #030912cc}
+.how-tos-heading:after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100vw;height:1px;background:#414b58}
+.how-to-aurora{position:absolute;inset:-45px -10% 0 10%;z-index:0;pointer-events:none;overflow:hidden}
+.how-to-aurora img{width:100%;height:100%;object-fit:fill;opacity:.75}
+.how-to-aurora:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#202123aa,transparent 75%)}
+@media(max-width:700px){.how-tos-page{padding-top:25px}.how-tos-heading{padding-block:35px 48px}.how-to-aurora{inset:-20px -35% 0 -20%}.how-to-aurora img{opacity:.45}}
+/* Original logo alpha masks preserve exact brand artwork; reuse existing aurora texture. */
+.client-mark{position:relative;display:block;filter:drop-shadow(0 2px 13px #359dff38)}
+.angels-mark{width:225px;height:150px}
+.korrect-mark{width:280px;height:71.4px}
+.client-mark img{width:100%!important;height:100%;max-height:none!important;object-fit:contain}
+@supports (mask-image:url("assets/Angels.webp")){
+.client-mark:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#a7e5ffcc,#69baffaa 45%,#a7e5ffcc),url("assets/hero-aurora.webp") center/160% auto,#50a4ef;mask-repeat:no-repeat;mask-position:center;mask-size:contain;pointer-events:none}
+.angels-mark:after{mask-image:url("assets/Angels.webp")}
+.korrect-mark:after{mask-image:url("assets/Korrect.webp")}
+}
+/* Center the About block evenly between neighboring section boundaries. */
+#about{padding-block:72px}
+#about+.contact-section{margin-top:0}
+.about-card{grid-template-columns:1fr 1fr;align-items:center;gap:48px}
+@media(max-width:900px){.about-card{grid-template-columns:1fr;gap:28px}}
+@media(max-width:560px){#about{padding-block:48px}.about-card{padding:30px}}
+/* Transparent restaurant cutaway integrates directly with the site, without a frame. */
+#services .restaurant-network-graphic{background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+#services .restaurant-network-graphic img{border-radius:0;object-fit:contain}
+
+.network-image-link{display:block;color:#b8dcff;text-decoration:none;border-radius:12px}
+.network-image-hint{display:none;text-align:center;font-size:.85rem;margin-top:10px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){.network-image-hint{display:block}}
+/* Shared crisp-white foreground treatment; colored accents and muted copy stay distinct. */
+:root{--white-pop-shadow:0 1px 2px #07111e99,0 4px 14px #03091255;--white-pop-small-shadow:0 1px 2px #03091299}
+h1,h2,h3,.brand-mark,.site-footer strong{color:#fff;text-shadow:var(--white-pop-shadow)}
+.site-header .brand-name,.site-header .site-nav>a:not(.nav-contact):not(.active-nav-link),.menu-button{color:#f4f9ff;text-shadow:var(--white-pop-small-shadow)}
+.button,.button-primary,.button-secondary,.button-light,.nav-contact,.calculator-value-badge{color:#fff;text-shadow:var(--white-pop-small-shadow)}
+.hero-copy .hero-text,.calculator-lead,.how-tos-lead{color:#f4f9ff;text-shadow:0 1px 2px #030912cc,0 3px 12px #03091280}
+
+/* Alternate compact sculpted How To art, natural proportions preserved. */
+.how-to-aurora img{object-fit:contain;object-position:right center}
+/* Keep the entire alternate sculpture inside the header with breathing room. */
+.how-to-aurora{inset:-25px 25px 10px 10%;overflow:visible}
+@media(max-width:700px){.how-to-aurora{inset:-10px 5px 8px -20%}}
+
+/* The folded How To form extends across the right two-thirds, without distortion. */
+.how-to-aurora{inset:-25px 25px 10px 35%}
+@media(max-width:700px){.how-to-aurora{inset:-10px 0 8px -15%}}
+/* Matched, restrained result glows: blue monthly and green annual remain distinct. */
+#monthly-revenue-lost,#monthly-tips-lost{text-shadow:0 1px 2px #07111e99,0 0 12px #65aaff55,0 0 24px #3d8aff26}
+#annual-revenue-lost,#annual-tips-lost{text-shadow:0 1px 2px #07111e99,0 0 12px #56dba355,0 0 24px #2bc58b26}
+
+.restored-network-diagram{display:block;width:100%;height:auto}
+.diagram-view-page{margin:0;padding:20px;background:#202123}
+.diagram-view-page main{max-width:1670px;margin:auto}
+.diagram-back{display:inline-block;margin-bottom:20px;color:#b8dcff}
+@media(max-width:700px){.diagram-view-page .restored-network-diagram{min-width:1000px}.diagram-view-page{overflow-x:auto}}

@@ -1,0 +1,5 @@
+/* Progressive-enhancement fallback: navigation stays usable without JavaScript. */
+.menu-button{display:none}
+@media(max-width:860px){.site-header{flex-wrap:wrap}.site-nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;width:100%;margin-top:12px;box-shadow:none}.site-nav a{padding:8px}}
+/* Without scripts the range controls cannot update the fixed default example. */
+.calculator-slider{display:none}.calculator-control-panel::after{content:"Default example shown. Enable JavaScript to adjust.";display:block;margin-top:18px;color:#b1c1d3;font-size:.82rem}

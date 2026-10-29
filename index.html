@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"><meta name="referrer" content="no-referrer"><meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BBY Restaurants designs and manages reliable restaurant networks for POS, Wi-Fi, security, AV, office systems, and connected restaurant technology." />
   <title>BBY Restaurants | Restaurant Network Design & Management</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="styles.css" />
+<meta name="theme-color" content="#202123"><link rel="stylesheet" href="dark.css"><noscript><link rel="stylesheet" href="no-script.css"></noscript></head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html#top" aria-label="BBY Technologies home">
@@ -20,11 +17,11 @@
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="index.html#top">Home</a>
+
       <a href="index.html#services">What We Do</a>
       <a href="index.html#how-you-win">How You Win</a>
       <a href="revenue-calculator.html">Increase Revenue</a>
-      <a href="index.html#about">About</a>
+      <a href="how-tos.html">How To</a>
       <a class="nav-contact" href="index.html#contact">Contact</a>
     </nav>
   </header>
@@ -32,26 +29,7 @@
   <main id="top">
     <section class="hero section-shell">
       <div class="hero-blob" aria-hidden="true">
-        <svg viewBox="0 0 1600 900" preserveAspectRatio="none" role="presentation">
-          <defs>
-            <linearGradient id="heroBlobGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#c9dcff" stop-opacity="0.70" />
-              <stop offset="42%" stop-color="#91b9ff" stop-opacity="0.58" />
-              <stop offset="72%" stop-color="#a9c8ff" stop-opacity="0.48" />
-              <stop offset="100%" stop-color="#e4eeff" stop-opacity="0.35" />
-            </linearGradient>
-            <radialGradient id="heroBlobGlow" cx="48%" cy="50%" r="62%">
-              <stop offset="0%" stop-color="#79aaff" stop-opacity="0.30" />
-              <stop offset="60%" stop-color="#9fc2ff" stop-opacity="0.12" />
-              <stop offset="100%" stop-color="#dfeaff" stop-opacity="0" />
-            </radialGradient>
-            <filter id="heroBlobSoft" x="-15%" y="-15%" width="130%" height="130%">
-              <feGaussianBlur stdDeviation="10" />
-            </filter>
-          </defs>
-          <path class="blob-glow" d="M122,242 C205,79 381,44 526,135 C646,210 692,323 835,287 C967,254 1035,133 1177,157 C1303,178 1341,302 1431,355 C1528,412 1580,499 1547,591 C1510,694 1399,714 1288,741 C1136,779 1051,886 889,851 C751,822 687,701 557,719 C421,738 335,829 210,798 C91,768 40,671 74,570 C101,490 55,373 122,242 Z" fill="url(#heroBlobGlow)" filter="url(#heroBlobSoft)" />
-          <path class="blob-main" d="M139,219 C222,68 389,59 526,145 C646,220 704,323 839,285 C966,249 1037,137 1171,162 C1292,184 1324,302 1413,353 C1512,410 1569,493 1534,583 C1498,676 1398,703 1284,730 C1134,767 1052,870 892,839 C757,813 690,697 559,713 C426,730 346,814 220,787 C103,762 49,668 81,573 C108,491 70,347 139,219 Z" fill="url(#heroBlobGradient)" />
-        </svg>
+        <img class="hero-aurora-art" src="assets/hero-aurora.webp" alt="" width="1440" height="810" decoding="async" fetchpriority="high" />
       </div>
       <div class="hero-copy reveal">
         <p class="eyebrow">Restaurant network design & management</p>
@@ -67,20 +45,31 @@
 
     </section>
 
+    <section class="content-section clients-section section-shell">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Our Favorite Clients</p>
+        <h2>Businesses we’re proud to support.</h2>
+      </div>
+      <div class="client-logo-grid reveal">
+        <div class="client-logo-card"><span class="client-mark angels-mark"><img src="assets/Angels.webp" alt="Angel's Icehouse"  width="900" height="600" loading="lazy" decoding="async" /></span></div>
+        <div class="client-logo-card"><span class="client-mark korrect-mark"><img class="korrect-logo" src="assets/Korrect.webp" alt="Korrect Fitness" width="800" height="204" loading="lazy" decoding="async" /></span></div>
+      </div>
+    </section>
+
     <section id="services" class="content-section section-shell">
       <div class="section-heading reveal">
         <p class="eyebrow">What we do</p>
-        <h2>The network behind your restaurant.</h2>
+        <h2>The network and security behind your restaurant technology.</h2>
       </div>
       <div class="restaurant-network-graphic reveal">
-        <img src="Restaurant_Network.png" alt="BBY Restaurants professional network connecting POS and Toast, guest Wi-Fi, office and admin, security cameras, and audio/video systems." />
+        <a class="network-image-link" href="restaurant-diagram.html" target="_blank" rel="noopener" aria-label="View larger restaurant network graphic (opens in new tab)"><svg class="restored-network-diagram" viewBox="0 0 1670 942" role="img" aria-label="Connected restaurant: Payments and Orders, Guest Wi-Fi, Cameras and Security, Speakers and Screens, Office and Staff. Designed. Secured. Managed." xmlns="http://www.w3.org/2000/svg"><image href="assets/restaurant-original-preserved.png" width="1670" height="942"/><rect x="108" y="292" width="220" height="38" fill="#001430"/><text x="218.0" y="311.0" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Payments &amp; Orders</text><rect x="804" y="99" width="138" height="37" fill="#001430"/><text x="873.0" y="117.5" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Guest Wi-Fi</text><rect x="1374" y="119" width="233" height="40" fill="#001430"/><text x="1490.5" y="139.0" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Cameras &amp; Security</text><rect x="1450" y="247" width="186" height="40" fill="#001430"/><text x="1543.0" y="267.0" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Speakers &amp; Screens</text><rect x="1448" y="514" width="160" height="39" fill="#001430"/><text x="1528.0" y="533.5" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Office &amp; Staff</text><rect x="706" y="745" width="365" height="39" fill="#001430"/><text x="888.5" y="764.5" dominant-baseline="middle" text-anchor="middle" fill="#f4f9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500">Designed. Secured. Managed.</text></svg><span class="network-image-hint">View larger ↗</span></a>
       </div>
 
       <div class="pillar-grid">
-        <article class="pillar-card reveal"><img class="service-image-icon" src="toast_icon.png" alt="POS and Toast icon" /><h3>POS &amp; Toast Networks</h3><p>Reliable connectivity for terminals, handhelds, KDS systems, printers, and payment devices.</p></article>
-        <article class="pillar-card reveal"><img class="service-image-icon" src="pro_wifi.png" alt="Professional Wi-Fi icon" /><h3>Professional Wi-Fi</h3><p>Office systems, staff connectivity, and secure guest Wi-Fi.</p></article>
-        <article class="pillar-card reveal"><img class="service-image-icon" src="cybernetwork_icon.png" alt="Network and cybersecurity icon" /><h3>Network &amp; Cybersecurity</h3><p>Segmentation, guest isolation, firewall controls, monitoring, and practical protection for restaurant systems.</p></article>
-        <article class="pillar-card reveal"><img class="service-image-icon" src="connectedrestaurant_icon.png" alt="Connected restaurant icon" /><h3>Connected Restaurant</h3><p>Connect cameras, AV, HVAC, and other building systems to one professionally designed restaurant network.</p></article>
+        <article class="pillar-card reveal"><img class="service-image-icon" src="assets/toast_icon.webp" alt="POS and Toast icon"  width="324" height="216" loading="lazy" decoding="async" /><h3>POS &amp; Toast Networks</h3><p>Reliable connectivity for terminals, handhelds, KDS systems, printers, and payment devices.</p></article>
+        <article class="pillar-card reveal"><img class="service-image-icon" src="assets/pro_wifi.webp" alt="Professional Wi-Fi icon"  width="324" height="216" loading="lazy" decoding="async" /><h3>Professional Wi-Fi</h3><p>Office systems, staff connectivity, and secure guest Wi-Fi.</p></article>
+        <article class="pillar-card reveal"><img class="service-image-icon" src="assets/cybernetwork_icon.webp" alt="Network and cybersecurity icon"  width="324" height="216" loading="lazy" decoding="async" /><h3>Network &amp; Cybersecurity</h3><p>Segmentation, guest isolation, firewall controls, monitoring, and practical protection for restaurant systems.</p></article>
+        <article class="pillar-card reveal"><img class="service-image-icon" src="assets/connectedrestaurant_icon.webp" alt="Connected restaurant icon"  width="324" height="216" loading="lazy" decoding="async" /><h3>Connected Restaurant</h3><p>Connect cameras, AV, HVAC, and other building systems to one professionally designed restaurant network.</p></article>
       </div>
     </section>
 
@@ -134,15 +123,7 @@
 
 
 
-    <section class="content-section clients-section section-shell">
-      <div class="section-heading centered reveal">
-        <p class="eyebrow">Our Favorite Clients</p>
-        <h2>Businesses we’re proud to support.</h2>
-      </div>
-      <div class="client-logo-grid reveal">
-        <div class="client-logo-card"><img src="Angels.png" alt="Angel's Icehouse" /></div>
-      </div>
-    </section>
+
 
     <section id="about" class="content-section about-section section-shell">
       <div class="about-card reveal">
